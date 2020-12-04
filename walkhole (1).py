@@ -3,8 +3,7 @@ import numpy as np
 import sys
 #np.set_printoptions(threshold=np.nan)
 
-
-def walk_hole(G, edges):
+def walk_hole_E(G):
     """
     Random walk that traps at a hole and weights the terminal edge
     """
@@ -13,20 +12,24 @@ def walk_hole(G, edges):
         G[a][b]['enum'] = m 
         m += 1
 
-    m = G.number_of_edges()       
-    T = np.zeros(m, dtype= int)    
-    S= 6000
-    #S = np.floor(m/100.)
+    m = G.number_of_edges()  
+    E =list(G.edges())
+    T = np.zeros(m, dtype= int)
     #S = 30
-    E = G.edges()
-    E_sampled = [E[i] for i in np.random.choice(range(m), S)]
+    S = 6000
+    #S = nx.number_of_edges(G)
+#     S = np.floor(m)
     
+    #print(np.random.choice(m, 2))
+    L = np.random.choice(m, S)
+    E_sampled = [E[i] for i in np.ndarray.tolist(L)]
+    #E_sampled = np.random.choice(E, S)
     for x,y in E_sampled:
         for u,v in [(x,y), (y,x)]:
 
             walk = [u,v]
             while True:
-                nexts = G.neighbors(v)
+                nexts = list(G.neighbors(v))
                 try:
                     nexts.remove(u)  #removing the walk head, for the next step
                 except ValueError:  #check if head is  in the next step. Avoid problem in the start
@@ -47,6 +50,7 @@ def walk_hole(G, edges):
     return T
 
 if __name__ == "__main__":
-    G = nx.read_edgelist('/sfs/qumulo/qhome/bm7mp/bii_data/edgelist_0819.txt', nodetype=str, data=(('weight',float),))
-    np.savetxt('/sfs/qumulo/qhome/bm7mp/OSS/rnbrw/Github_'+sys.argv[1], walk_hole(G, G.edges()).astype(int), fmt='%i')  
-
+    #G =  nx.karate_club_graph()
+    G = nx.read_edgelist('/sfs/qumulo/qhome/bm7mp/git/oss-2020/Pydata/full_edgelist_0819.txt', nodetype=str, data=(('weight',float),))
+    #np.savetxt('/home/bm7mp/OS/rnbrw/k_'+sys.argv[1], walk_hole_E(G).astype(int), fmt='%i')  
+    np.savetxt('/sfs/lustre/bahamut/scratch/bm7mp/git_data_full_Dec2020/git_'+sys.argv[1], walk_hole_E(G).astype(int), fmt='%i')  
