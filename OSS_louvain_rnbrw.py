@@ -34,7 +34,7 @@ for a,b in G.edges():
     G[a][b]['w_ret'] = W_ret[m]
     m += 1
     
-partition = community_louvain.best_partition(G, weight='weight')
+partition = community_louvain.best_partition(G, weight='w_ret')
 def dictinvert(d): #a dict with memebership and nodes of each membership
     inv = {}
     for k, v in d.items():
