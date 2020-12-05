@@ -16,7 +16,7 @@ def walk_hole_E(G):
     E =list(G.edges())
     T = np.zeros(m, dtype= int)
     #S = 30
-    S = 6000
+    S = 32000
     #S = nx.number_of_edges(G)
 #     S = np.floor(m)
     
