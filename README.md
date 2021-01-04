@@ -15,10 +15,9 @@ to Step 3 incrementing k = k + 1.
 Note that these walkers can be initialized independently from each other and retraced edges can be collated at the very end of the process. Therefore,
 one can execute this process as an array of jobs on a cluster of computers efficiently.
 
-1- first execute an array of jobs (#m/s times, 2s is the number of walkers per job) for walkhole.py: 
+1- first execute an array of jobs (#m/s times, 2s is the number of walkers per job) for walkhole.py:  sbatch --array=1-m/s myjob.sh
 
-sbatch --array=1-m/s myjob.sh
-2- second, collect the jobs using array_wrangle.py and store the final weights into T filesusing this array job :1-T Array_wrangle.sh
+2- second, collect the jobs using array_wrangle.py and store the final weights into T filesusing this array job :sbatch --array=1-T Array_wrangle.sh
 
-sbatch Array_wrangle.sh
-3- then, add thoes T files into a single file using: Array_wrangle_finall.sh 
+
+3- then, add thoes T files into a single file using: sbatch Array_wrangle_finall.sh 
