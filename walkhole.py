@@ -51,6 +51,6 @@ def walk_hole_E(G):
 
 if __name__ == "__main__":
     #G =  nx.karate_club_graph()
-    G = nx.read_edgelist('/sfs/qumulo/qhome/bm7mp/git/oss-2020/Pydata/full_edgelist_0819.txt', nodetype=str, data=(('weight',float),))
+    G = nx.read_edgelist('/Path/full_edgelist_0819.txt', nodetype=str, data=(('weight',float),))
     #np.savetxt('/home/bm7mp/OS/rnbrw/k_'+sys.argv[1], walk_hole_E(G).astype(int), fmt='%i')  
-    np.savetxt('/sfs/lustre/bahamut/scratch/bm7mp/git_data_full_Dec2020/git_'+sys.argv[1], walk_hole_E(G).astype(int), fmt='%i')  
+    np.savetxt('/Path/git_'+sys.argv[1], walk_hole_E(G).astype(int), fmt='%i')  
