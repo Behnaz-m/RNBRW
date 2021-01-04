@@ -14,7 +14,7 @@ import pandas as pd
 import seaborn as sns
 import igraph as ig
 from igraph import *
-G = nx.read_edgelist('/sfs/qumulo/qhome/bm7mp/bii_data/edgelist_0819.txt', nodetype=str, data=(('weight',float),))
+G = nx.read_edgelist('/Path/edgelist_0819.txt', nodetype=str, data=(('weight',float),))
 #gs = nx.connected_components(G)
 #node_components = list(gs)
 #from networkx.drawing.nx_agraph import graphviz_layout
@@ -42,5 +42,5 @@ def dictinvert(d): #a dict with memebership and nodes of each membership
         keys.append(k)
     return inv
 membership = dictinvert(partition)
-with open('/sfs/qumulo/qhome/bm7mp/OSS/rnbrw/mem_luv_rnbrw.pickle', 'wb') as handle:
+with open('/Path/mem_luv_rnbrw.pickle', 'wb') as handle:
     pickle.dump(membership, handle, protocol=pickle.HIGHEST_PROTOCOL)
