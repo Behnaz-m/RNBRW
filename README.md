@@ -17,7 +17,7 @@ one can execute this process as an array of jobs on a cluster of computers effic
 
 1- first execute an array of jobs (#m/s times, 2s is the number of walkers per job) for walkhole.py:  sbatch --array=1-m/s myjob.sh
 
-2- second, collect the jobs using array_wrangle.py and store the final weights into T filesusing this array job:sbatch --array=1-T Array_wrangle.sh
+2- second, collect the jobs using array_wrangle.py and store the final weights into T files using this array job:sbatch --array=1-T Array_wrangle.sh
 
 
 3- then, add thoes T files into a single file using: sbatch Array_wrangle_finall.sh 
