@@ -80,7 +80,7 @@ def cycle_prop_E(G, nsim = 2, parallel = True):
     return G
 G = nx.read_edgelist('bii_data/edgelist_0819.txt', nodetype=str, data=(('weight',float),))
 cycle_prop_E(G, nsim = 1, parallel = True)
-RNBRW_weights = nx.get_edge_attributes(E,'ret')
+RNBRW_weights = nx.get_edge_attributes(G,'ret')
 SR = sum(RNBRW_weights.values())
 for k,v in RNBRW_weights.items():
     RNBRW_weights[k]=  RNBRW_weights[k]/SR
