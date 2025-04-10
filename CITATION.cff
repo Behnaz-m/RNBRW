@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "RNBRW: Renewal Non-Backtracking Random Walks for Community Detection"
+version: "0.1.0"
+date-released: 2019-05-20  # optional exact date of arXiv submission if you want
+authors:
+  - family-names: Moradi
+    given-names: Behnaz
+    affiliation: James Madison University
+    orcid: https://orcid.org/0000-0002-3063-3517
+  - family-names: Shakeri
+    given-names: Heman
+  - family-names: Poggi-Corradini
+    given-names: Pietro
+  - family-names: Higgins
+    given-names: Michael
+abstract: "Python implementation of RNBRW, a method to incorporate cyclic structures into network analysis to improve community detection."
+repository-code: https://github.com/Behnaz-m/RNBRW
+url: https://pypi.org/project/rnbrw/
+license: MIT
+doi: 10.48550/arXiv.1805.07484
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Moradi
+      given-names: Behnaz
+    - family-names: Shakeri
+      given-names: Heman
+    - family-names: Poggi-Corradini
+      given-names: Pietro
+    - family-names: Higgins
+      given-names: Michael
+  title: "A method for incorporating network cyclic structures to improve community detection"
+  year: 2019
+  journal: arXiv preprint
+  doi: 10.48550/arXiv.1805.07484

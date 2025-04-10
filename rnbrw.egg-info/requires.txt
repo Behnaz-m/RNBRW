@@ -1,0 +1,6 @@
+numpy
+scipy
+matplotlib
+networkx
+joblib
+python-louvain

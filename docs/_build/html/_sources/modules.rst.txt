@@ -1,0 +1,7 @@
+RNBRW API Reference
+====================
+
+.. automodule:: rnbrw
+   :members:
+   :undoc-members:
+   :show-inheritance:
